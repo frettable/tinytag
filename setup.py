@@ -1,12 +1,4 @@
-#!/usr/bin/env python
-from os.path import join
-from setuptools import setup
+from setuptools import setup, find_packages
 
+setup(name='tinytag', version='1.2.2', packages=find_packages())
 
-def get_version():
-    with open(join("tinytag", "__init__.py")) as f:
-        version_line = next(line for line in f if line.startswith("__version__ ="))
-        return version_line.split("=")[1].strip().strip("\"'")
-
-
-setup(version=get_version())
